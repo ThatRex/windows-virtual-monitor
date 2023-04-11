@@ -1,8 +1,8 @@
 # Windows Virtual Monitor
 
-Easily add and remove virtual monitors. Automatically re-add virtual monitors on startup.
+Easily add up to 4 virtual monitors. Automatically re-add virtual monitors on startup.
 
-Tested on windows 10.
+Tested on windows 10 and 11.
 
 The script uses [Amyuni Technologies](https://www.amyuni.com/) virtual display driver. [Find out more here](https://www.amyuni.com/forum/viewtopic.php?t=3030).
 
