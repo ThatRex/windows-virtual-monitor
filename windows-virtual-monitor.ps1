@@ -1,4 +1,4 @@
-$Name = "Windows Virtual Monitor V1.0"
+$Name = "Windows Virtual Monitor V1.1"
 $ZipUrl = "https://amyuni.com/downloads/usbmmidd_v2.zip"
 $WorkDir = "$env:ProgramData\windows-virtual-monitor"
 $DriverDir = "$WorkDir\usbmmidd_v2"
@@ -6,9 +6,8 @@ $DriverName = "usbmmidd"
 $ConfigFile = "$WorkDir\config.json"
 $TaskName = "readd-virtual-monitors"
 
-$ProcessorArchitecture = (Get-WmiObject Win32_Processor).AddressWidth
 $Installer = "deviceinstaller"
-if ($ProcessorArchitecture -eq 64) { $Installer = "deviceinstaller64" }
+if ($env:PROCESSOR_ARCHITECTURE -eq 'AMD64') { $Installer = "deviceinstaller64" }
 
 function Get-Config {
     if (-not (Test-Path $ConfigFile)) {
