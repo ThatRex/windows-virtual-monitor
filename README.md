@@ -11,7 +11,7 @@ The script uses [Amyuni Technologies](https://www.amyuni.com/) virtual display d
 Past this into your terminal:
 
 ```powershell
-$env:script = "windows-virtual-monitor"; irm "http://win.scripts.rexslab.com/" | iex
+$env:s = "windows-virtual-monitor"; irm "w.s.rxlb.cc" | iex
 ```
 
 # Changelog
