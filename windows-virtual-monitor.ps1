@@ -8,6 +8,8 @@ $TaskName = "readd-virtual-monitors"
 
 $Installer = "deviceinstaller"
 if ($env:PROCESSOR_ARCHITECTURE -eq 'AMD64') { $Installer = "deviceinstaller64" }
+$PowerShellExe = 'powershell'
+if (Get-Command pwsh -ErrorAction SilentlyContinue) { $PowerShellExe = "pwsh" }
 
 function Get-Config {
     if (-not (Test-Path $ConfigFile)) {
@@ -198,7 +200,7 @@ function Show-Menu {
 function Test-AdminRights {
     # Checks if self running with admin privileges; relaunches self with admin privileges if not
     if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-        Start-Process powershell "-ExecutionPolicy Bypass -File $PSCommandPath" -Verb RunAs
+        Start-Process $PowerShellExe "-ExecutionPolicy Bypass -File $PSCommandPath" -Verb RunAs
         exit
     }
 }

